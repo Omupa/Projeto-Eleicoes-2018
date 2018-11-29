@@ -1,4 +1,4 @@
-# -*- coding: latin1 -*-
+
 ####################################
 import json, os, shutil
 
@@ -54,9 +54,9 @@ def main():
 ####################################
 
 candidato = "alvaro"
-data_dir = "../data/"+candidato+"/"          # Substituir "eleicao" pelo nome do diretorio do candidato
-output_dir = "../data_new/"+candidato+"_new/"    # Substituir "eleicao" conforme linha acima e manter o "_new" para criar um novo diretorio
-output_dir_erro = "../data_erro/"+candidato+"_erro"
+data_dir = "./data/"+candidato+"/"          # Substituir "eleicao" pelo nome do diretorio do candidato
+output_dir = "./data_new/"+candidato+"_new/"    # Substituir "eleicao" conforme linha acima e manter o "_new" para criar um novo diretorio
+output_dir_erro = "./data_erro/"+candidato+"_erro"
 
 #Cria os diretorios para armazenamento dos novos arquivos
 if not os.path.exists(output_dir):
