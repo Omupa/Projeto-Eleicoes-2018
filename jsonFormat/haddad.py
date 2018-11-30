@@ -18,7 +18,6 @@ def read_file(file):
                         try:
                             item = json.loads(item)               # Converte a string em dicionario JSON para testar se está OK.
                             g.write(json.dumps(item) + "\n")      # Salva o dicionario no novo arquivo.
-                            print("OK")
                         except:
                             print("Erro no json.dumps()")
                     else:
@@ -27,8 +26,8 @@ def read_file(file):
 ########################### main
 
 def main():
-    os.system('cls')
-    print ("\n####################################################################### inicio\n")
+    os.system('clear')
+    print ("\n####################################################################### inicio "+ candidato)
     i = 0
     for file in os.listdir(data_dir):                          # Para cada arquivo no diretorio do candidato
         if not os.path.isfile(data_dir+file):
@@ -52,9 +51,9 @@ def main():
 ####################################
 
 candidato = "haddad"
-data_dir = "./data/"+candidato+"/"          # Substituir "eleicao" pelo nome do diretorio do candidato
-output_dir = "./data_new/"+candidato+"_new/"    # Substituir "eleicao" conforme linha acima e manter o "_new" para criar um novo diretorio
-output_dir_erro = "./data_erro/"+candidato+"_erro"
+data_dir = "../data/"+candidato+"/"          # Substituir "eleicao" pelo nome do diretorio do candidato
+output_dir = "../data_new/"+candidato+"_new/"    # Substituir "eleicao" conforme linha acima e manter o "_new" para criar um novo diretorio
+output_dir_erro = "../data_erro/"+candidato+"_erro"
 
 #Cria os diretorios para armazenamento dos novos arquivos
 if not os.path.exists(output_dir):
