@@ -1,8 +1,8 @@
 import json, os
 import pandas as pd
 
-data_dir = "../data_new_teste/"
-resultado = "resultado_teste"
+data_dir = "../data_new_2_turno/"
+resultado = "resultados_2_turno"
 saoRetweets = {
     "geo": 0,
     "place": 0,
@@ -14,14 +14,15 @@ for folder in os.listdir(data_dir):
     print(folder)
     data = data_dir + folder + "/"
 
-    #if not os.path.exists("./data_HistFreqUser/" + folder):
-    #    os.makedirs("./data_HistFreqUser/" + folder)
+    if not os.path.exists("../" + resultado):
+        break
+    #    os.makedirs("./data_HistFreqUser/" + folder
 
     for file in os.listdir(data):
         with open(data+file, 'r') as g:
             for line in g.readlines():
                 linha = json.loads(line)
-                chave = linha.get('retweeted_status')
+
                 if linha.get('geo') != None:
                     soma = saoRetweets["geo"]
                     soma = soma + 1
